@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jingang Wang - Personal Projects</title>
+  <style>
+    :root {
+      --accent: #2a7ae2;
+      --text: #333;
+      --bg: #fafafa;
+      --card-bg: #fff;
+      --border: #ddd;
+    }
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+    }
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid var(--accent);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: var(--accent);
+    }
+    header p {
+      margin: 0.5rem 0;
+    }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 2.5rem;
+    }
+    section h2 {
+      font-size: 1.4rem;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 0.25rem;
+      margin-bottom: 1rem;
+    }
+    .projects {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      transition: box-shadow 0.2s ease;
+    }
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+    .email-box {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .copy-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .copy-btn:hover {
+      background: #1a5ec0;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      border-top: 1px solid var(--border);
+      background: var(--card-bg);
+      font-size: 0.9rem;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://picsum.photos/200" alt="Profile photo of Jingang Wang">
+    <h1>Jingang Wang</h1>
+    <p>Staff Optical Engineer · Tinkerer · Builder</p>
+    <p>I design and prototype optical systems and develop illumination and imaging test solutions and applications. On this site, I showcase my side projects in robotics and computer vision.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Side Projects</h2>
+      <div class="projects">
+        <div class="card">
+          <h3>🤖 Robot Arm</h3>
+          <p>A DIY robotic arm prototype, controlled with microcontrollers for simple pick-and-place demonstrations.</p>
+          <p><a href="#">[Project Link]</a></p>
+        </div>
+        <div class="card">
+          <h3>📷 Smart Monitor Camera</h3>
+          <p>A camera system that identifies people: greeting familiar faces and warning strangers with automated responses.</p>
+          <p><a href="#">[Project Link]</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <div class="email-box">
+        <span id="email">takepainsfh@gmail.com</span>
+        <button class="copy-btn" onclick="copyEmail()">Copy</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Jingang Wang · Built with ❤️ and plain HTML/CSS</p>
+  </footer>
+
+  <script>
+    function copyEmail() {
+      const email = document.getElementById("email").innerText;
+      navigator.clipboard.writeText(email).then(() => {
+        const btn = document.querySelector(".copy-btn");
+        btn.textContent = "Copied!";
+        setTimeout(() => btn.textContent = "Copy", 2000);
+      });
+    }
+  </script>
+</body>
+</html>
